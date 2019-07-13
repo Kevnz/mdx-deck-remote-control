@@ -1,20 +1,31 @@
-# My Custom Module
+# mdx-deck-remote-control
+
+Component that allows you to remote control an MDX Deck presentation
 
 ```
-- .assets
--- extend.css
--- head.html
--- foot.html
-- .circleci
--- config.yml
-- src
--- index.js
--- __tests__
---- index.test.js
-- .eslintrc.json
-- .gitignore
-- package.json
-- readme.md
+npm install mdx-deck-remote-control
+```
+
+Then in your theme.js file
+
+```jsx
+
+const Provider = props => (
+  <RemoteControl
+    next={props.next}
+    previous={props.previous}
+    goto={props.goto}
+    url="websocket-server"
+    path="listen-here"
+  />
+)
+
+export default {
+  Provider,
+  ...theme
+}
 
 ```
+
+For more information [this post](https://dev.to/kevnz/remote-control-an-mdx-deck-presentation-1gmm)
 
